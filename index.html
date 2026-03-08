@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ORIFLAME | Luxury Beauty Store</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="promo-banner">
+        <div class="marquee">
+            <span>✨ تألقي بجمال سويدي أصيل مع أوريفلام المغرب ✨</span>
+            <span>🚚 توصيل مجاني سريع لجميع المدن المغربية 🚚</span>
+            <span>🎁 خصم خاص 10% على أول طلبية لكِ اليوم! 🎁</span>
+        </div>
+    </div>
+
+    <header>
+        <a href="#" class="logo">ORIFLAME<span>.LUXE</span></a>
+        <div class="cart-trigger" onclick="openCart()">
+            🛒 <span class="badge" id="cart-count">0</span>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <span class="badge-luxury">إصدار جديد 2026 ✨</span>
+            <h1>سحر الأناقة <span>أوريفلام</span></h1>
+            <p>اكتشفي تشكيلتنا الحصرية من العطور والزيوت الطبيعية التي تمنحكِ الثقة والجمال كل يوم بجودة سويدية عالمية.</p>
+            <div class="hero-btns">
+                <a href="#main-grid" class="btn-primary">اكتشفي المجموعة</a>
+                <a href="https://wa.me/212600000000" class="btn-secondary">دردشة واتساب</a>
+            </div>
+        </div>
+        <div class="hero-image-container">
+            <div class="blob blob-1"></div>
+            <div class="blob blob-2"></div>
+            <img src="https://ma.oriflame.com/product-images/external/38531_1.png" alt="Premium Product" class="floating-img">
+            <div class="floating-card">
+                <span>⭐ تقييم 4.9</span>
+                <p>الأكثر طلباً هذا الشهر</p>
+            </div>
+        </div>
+    </section>
+
+    <main class="grid" id="main-grid"></main>
+
+    <div id="cart-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>حقيبة الجمال 🛍️</h2>
+                <span class="close-btn" onclick="closeCart()">&times;</span>
+            </div>
+            <div id="cart-items-list"></div>
+            <div class="cart-footer">
+                <div class="total-row">
+                    <span>المجموع:</span>
+                    <span class="total-price"><span id="cart-total">0</span> درهم</span>
+                </div>
+                <button class="btn-checkout" onclick="checkout()">تأكيد الطلب (واتساب) ✅</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="admin-panel" class="admin-panel">
+        <div class="db-header">
+            <div><h1>لوحة الإدارة PRO ⚙️</h1><p>MohamedDev Dashboard</p></div>
+            <button class="btn-exit" onclick="closeAdmin()">خروج</button>
+        </div>
+        <div class="stats-grid">
+            <div class="stat-card"><h4>إجمالي المنتجات</h4><p id="stat-count">0</p></div>
+            <div class="stat-card"><h4>قيمة المخزون</h4><p id="stat-value">0</p></div>
+            <div class="stat-card"><h4>الحالة</h4><p style="color:#25d366;">متصل 🟢</p></div>
+        </div>
+        <div class="db-main">
+            <div class="form-card">
+                <h3>إضافة منتج جديد</h3>
+                <input type="hidden" id="edit-id">
+                <input type="text" id="p-name" class="admin-input" placeholder="اسم المنتج">
+                <input type="number" id="p-price" class="admin-input" placeholder="السعر">
+                <input type="text" id="p-img" class="admin-input" placeholder="رابط الصورة">
+                <button class="btn-save" onclick="saveProduct()">حفظ في المخزن</button>
+            </div>
+            <div class="form-card">
+                <h3>المخزون الحالي</h3>
+                <table class="admin-table"><tbody id="admin-list"></tbody></table>
+            </div>
+        </div>
+    </div>
+
+    <footer>حقوق النشر &copy; 2026 MohamedDev | ORIFLAME MOROCCO</footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
