@@ -99,7 +99,7 @@ function editProduct(id) { const p = products.find(x => x.id === id); document.g
 // إرسال الطلبية النهائية
 function checkout() {
     if (cart.length === 0) return;
-    const phone = "212600000000"; // رقم الواتساب
+    const phone = "212641727135"; // رقم الواتساب
     const list = cart.map(i => `🛍️ ${i.name} (الثمن: ${i.price} درهم) [الكمية: ${i.qty}]`).join('\n');
     const total = document.getElementById('cart-total').innerText;
     const msg = `طلب جديد من المتجر الفاخر ✨\n--------------\n${list}\n--------------\n💰 المجموع النهائي: ${total} درهم\n\nالمرجو ملء المعلومات لإتمام الطلب:\n👤 الاسم الكامل: \n📞 رقم الهاتف: \n📍 العنوان الكامل: \n\nشكراً لثقتكم في أوريفلام! ❤️`;
